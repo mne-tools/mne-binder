@@ -1,23 +1,17 @@
 # Binder Docker config file.
 
-FROM kingjr/mne-binder
-
+# This is required
+FROM andrewosh/binder-base
 MAINTAINER Jean-Remi King <jeanremi.king@gmail.com>
 
-USER main
+# Install dependencies and MNE master
+RUN conda update conda; conda install --yes --quiet numpy setuptools numpy scipy matplotlib scikit-learn nose h5py PIL pyside; pip install -q nibabel boto https://github.com/mne-tools/mne-python/archive/master.zip
 
-# Install dependencies
-RUN conda install numpy setuptools numpy scipy matplotlib scikit-learn nose mayavi pandas h5py PIL patsy pyside
-RUN pip install nibabel
+# Download data
+RUN ipython -c "import mne; print(mne.datasets.sample.data_path(verbose=False))"
 
-# Install stable MNE
-RUN pip install mne
+# Try to decrease initial IPython kernel load times?
+RUN ipython -c "import matplotlib.pyplot as plt; print(plt)"
 
-# Download datasets
-RUN python -c "import mne; mne.datasets.sample.data_path()"
-
-# Download ipynb notebooks
-RUN git clone https://github.com/mne-tools/mne-tools.github.io
-
-# Dynamic copy of the notebooks into 'notebooks' directory at jupyter startup
-RUN sed '$icp $HOME/mne-tools.github.io/stable/_downloads/*.ipynb $HOME/notebooks/' $HOME/start-notebook.sh --in-place
+# Download and move ipynb notebooks
+RUN git clone --depth=1 https://github.com/mne-tools/mne-tools.github.io; mv mne-tools.github.io/dev/_downloads/*.ipynb .; rm -Rf mne-tools.github.io

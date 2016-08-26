@@ -1,30 +1,19 @@
 .. -*- mode: rst -*-
 
+mne-binder
+==========
 
-|Zenodo|_
+This is a `binder <http://mybinder.org>`_  helper for
+`MNE-Python <http://github.com/mne-tools/mne-python>`_.
 
-.. |Zenodo| image:: https://zenodo.org/badge/5822/mne-tools/mne-python.svg
-.. _Zenodo: https://zenodo.org/badge/latestdoi/5822/mne-tools/mne-python
+Notebooks can be launched with e.g.:
 
-`mne-python <http://mne-tools.github.io/>`_
-=======================================================
-
-This package is designed for sensor- and source-space analysis of [M/E]EG
-data, including frequency-domain and time-frequency analyses, MVPA/decoding
-and non-parametric statistics. This package is presently evolving quickly and
-thanks to the adopted open development environment user contributions can
-be easily incorporated.
-
-This repository link `MNE-python <http://mne-tools.github.io/>`_ to
-`binder <http://mybinder.org/>`_ so as to allow testing the `examples` and
-`tutorials` notebooks directly in the browser. Note that examples requiring
-`mayavi` won't be able to render the figures.
-
+    http://mybinder.org/repo/mne-tools/mne-binder/notebooks/plot_introduction.ipynb
 
 Licensing
 ^^^^^^^^^
 
-MNE-Python is **BSD-licenced** (3 clause):
+MNE-Binder is **BSD-licenced** (3 clause):
 
     This software is OSI Certified Open Source Software.
     OSI Certified is a certification mark of the Open Source Initiative.
