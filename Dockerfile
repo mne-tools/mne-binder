@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook:65761486d5d3 
+FROM jupyter/minimal-notebook:65761486d5d3
 
 MAINTAINER Jean-Remi King <jeanremi.king@gmail.com>
 
@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get -yq dist-upgrade \
     && apt-get install -yq --no-install-recommends \
     openssh-client \
-    vim \ 
+    vim \
     curl \
     gcc \
     && apt-get clean
@@ -32,15 +32,15 @@ RUN npm i npm@latest -g
 
 # Install Python packages
 RUN pip install vtk && \
-	pip install boto && \
-	pip install h5py && \
-	pip install nose && \
+    pip install boto && \
+    pip install h5py && \
+    pip install nose && \
     pip install ipyevents && \
     pip install ipywidgets && \
     pip install mayavi && \
     pip install nibabel && \
     pip install numpy && \
-	pip install PIL && \
+    pip install PIL && \
     pip install pillow && \
     pip install pyqt5 && \
     pip install scikit-learn && \
@@ -69,4 +69,4 @@ RUN git clone --depth=1 https://github.com/mne-tools/mne-tools.github.io && \
     rm -Rf mne-tools.github.io
 
 # Add an x-server to the entrypoint. This is needed by Mayavi
-ENTRYPOINT ["tini", "-g", "--", "xvfb-run"] 
+ENTRYPOINT ["tini", "-g", "--", "xvfb-run"]
