@@ -44,7 +44,8 @@ RUN pip install vtk && \
     pip install pyqt5 && \
     pip install scikit-learn && \
     pip install scipy && \
-    pip install xvfbwrapper
+    pip install xvfbwrapper &&\
+    pip install matplotlib
 
 # Install Jupyter notebook extensions
 RUN pip install RISE && \
