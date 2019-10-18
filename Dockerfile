@@ -40,14 +40,11 @@ RUN pip install vtk && \
     pip install mayavi && \
     pip install nibabel && \
     pip install numpy && \
-    pip install PIL && \
     pip install pillow && \
     pip install pyqt5 && \
     pip install scikit-learn && \
     pip install scipy && \
-    pip install xvfbwrapper && \
-    pip install https://github.com/nipy/PySurfer/archive/master.zip && \
-    pip install https://github.com/mne-tools/mne/archive/master.zip
+    pip install xvfbwrapper
 
 # Install Jupyter notebook extensions
 RUN pip install RISE && \
