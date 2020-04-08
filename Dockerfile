@@ -40,7 +40,6 @@ RUN pip install vtk && \
     pip install mayavi && \
     pip install nibabel && \
     pip install numpy && \
-    pip install PIL && \
     pip install pillow && \
     pip install pyqt5 && \
     pip install scikit-learn && \
