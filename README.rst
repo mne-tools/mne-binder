@@ -1,5 +1,8 @@
 .. -*- mode: rst -*-
 
+THIS PACKAGE HAS BEEN DEPRECATED. PLEASE USE `MNE-Docker <https://github.com/mne-tools/mne-docker>`_ 
+=====================================================================================================
+
 mne-binder
 ==========
 
